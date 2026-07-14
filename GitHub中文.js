@@ -206,6 +206,7 @@
     ['Opened their first pull request on GitHub in', '在 GitHub 上开启了首个拉取请求，所在仓库：'],
     ['Congratulations on your first pull request!', '恭喜你创建了第一个拉取请求！'],
     ['First pull request', '首个拉取请求'],
+    ['had no activity during this period.', '在此期间没有活动。'],
 
     // 编辑个人资料
     ['Name', '姓名'],
@@ -616,6 +617,42 @@
       justify-content: flex-start !important;
       column-gap: 4px !important;
     }
+
+    ul[data-component="ActionList"][role="menu"] {
+      width: max-content !important;
+      min-width: 200px !important;
+      max-width: min(420px, calc(100vw - 24px)) !important;
+      overflow-x: hidden !important;
+    }
+
+    :where(
+      [class*="prc-Overlay-"],
+      [class*="prc-ActionMenu-"],
+      div,
+      section
+    ):has(
+      > ul[data-component="ActionList"][role="menu"]
+    ) {
+      --overlay-width: max-content !important;
+      width: fit-content !important;
+      min-width: 0 !important;
+      max-width: min(420px, calc(100vw - 24px)) !important;
+    }
+
+    ul[data-component="ActionList"][role="menu"]
+      [data-component="ActionList.Item.Label"] {
+      white-space: nowrap !important;
+    }
+
+    :where(
+      [class*="prc-Overlay-"],
+      [class*="prc-ActionMenu-"]
+    ):has(ul[data-component="ActionList"][role="menu"]) {
+      --overlay-width: max-content !important;
+      width: fit-content !important;
+      min-width: 0 !important;
+      max-width: min(420px, calc(100vw - 24px)) !important;
+    }
   `;
 
   /**
@@ -977,7 +1014,15 @@
    */
   function injectCompactTabStyles(root) {
     if (!root?.querySelector) return;
-    if (root.querySelector('#github-zh-compact-tabs')) return;
+
+    const existingStyle = root.querySelector(
+      '#github-zh-compact-tabs'
+    );
+
+    if (existingStyle) {
+      existingStyle.textContent = compactTabStyles;
+      return;
+    }
 
     const style = document.createElement('style');
     style.id = 'github-zh-compact-tabs';
