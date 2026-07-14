@@ -162,8 +162,10 @@
     ['Customize your pins', '自定义置顶项目'],
     ['Contribution settings', '贡献设置'],
     ['Private contributions', '私有贡献'],
+    ['Turning on private contributions will show anonymized private activity on your profile.', '启用私有贡献后，你的个人资料中将显示匿名的私有活动。'],
     ['Turning off private contributions will show only public activity on your profile.', '关闭私有贡献后，你的个人资料中将只显示公开活动。'],
     ['Activity overview', '活动概览'],
+    ['Turning off the Activity overview will hide the section on your profile.', '关闭活动概览后，你的个人资料中将隐藏此部分。'],
     ['Contributed to', '贡献于'],
     ['Code review', '代码审查'],
     ['Turning on the activity overview will show an overview of your activity across organizations and repositories.', '启用活动概览后，将显示你在各个组织和仓库中的活动概览。'],
@@ -472,6 +474,7 @@
   };
 
   const partialTranslations = [
+    [/Turning off the 活动概览 will hide the section on your profile\./g, '关闭活动概览后，你的个人资料中将隐藏此部分。'],
     // 个人资料和贡献时间线的完整动态句
     [/(@[A-Za-z0-9_.-]+)\s+opened\s+pull\s+requests\s+that\s+have\s+been\s+merged\./gi, '$1 开启了已合并的拉取请求。'],
     [/\b(\d+)%\s+unlocked\b/gi, '已解锁 $1%'],
