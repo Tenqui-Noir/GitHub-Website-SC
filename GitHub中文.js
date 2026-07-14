@@ -164,6 +164,8 @@
     ['Private contributions', '私有贡献'],
     ['Turning off private contributions will show only public activity on your profile.', '关闭私有贡献后，你的个人资料中将只显示公开活动。'],
     ['Activity overview', '活动概览'],
+    ['Contributed to', '贡献于'],
+    ['Code review', '代码审查'],
     ['Turning on the activity overview will show an overview of your activity across organizations and repositories.', '启用活动概览后，将显示你在各个组织和仓库中的活动概览。'],
     ['Learn how we count contributions', '了解我们如何计算贡献'],
     ['Less', '少'],
@@ -477,6 +479,8 @@
     [/\bJoined\s+the\s+([A-Za-z0-9_.-]+)\s+organization\b/gi, '加入了 $1 组织'],
     [/\b([A-Za-z0-9_.-]+)\s+had\s+no\s+activity\s+during\s+this\s+period\./gi, '$1 在此期间没有活动。'],
     [/\bLink\s+to\s+social\s+profile\s+(\d+)\b/gi, '社交资料链接 $1'],
+    [/\band\s+(\d[\d,]*)\s+other\s+repositories\b/gi, '以及其他 $1 个仓库'],
+    [/\bActivity\s+overview\b/gi, '活动概览'],
     [/\b(\d[\d,]*)\s+contributions?\s+in\s+the\s+last\s+year\b/gi, '过去一年有 $1 次贡献'],
     [/\b(\d[\d,]*)\s+contributions?\s+in\s+(\d{4})\b/gi, '$2 年有 $1 次贡献'],
     [/\bLists\s*\((\d[\d,]*)\)/gi, '列表 ($1)'],
@@ -733,6 +737,14 @@
       [data-component="ActionList.Item.Label"] {
       white-space: nowrap !important;
     }
+
+    [data-github-zh-more-button="true"] {
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      line-height: 1 !important;
+    }
+
   `;
 
   /**
@@ -914,6 +926,63 @@
   }
 
   /**
+   * GitHub 的贡献图标签使用了按英文宽度计算的 dx。
+   * 翻译后根据实际文字宽度重新对齐四个方向的百分比和标签中心。
+   */
+  function scheduleActivityOverviewAlignment(element) {
+    const svg = element.closest(
+      'svg.js-activity-overview-graph'
+    );
+
+    if (!svg) return;
+
+    requestAnimationFrame(() => {
+      for (const direction of [
+        'top',
+        'right',
+        'bottom',
+        'left',
+      ]) {
+        const percentage = svg.querySelector(
+          `.js-highlight-percent-${direction}`
+        );
+        const label = svg.querySelector(
+          `.js-highlight-label-${direction}`
+        );
+
+        if (
+          !percentage?.isConnected ||
+          !label?.isConnected ||
+          !percentage.textContent?.trim() ||
+          typeof percentage.getComputedTextLength !== 'function' ||
+          typeof label.getComputedTextLength !== 'function'
+        ) {
+          continue;
+        }
+
+        const percentageDx = Number.parseFloat(
+          percentage.getAttribute('dx')
+        );
+
+        if (!Number.isFinite(percentageDx)) continue;
+
+        const percentageWidth = percentage.getComputedTextLength();
+        const labelWidth = label.getComputedTextLength();
+        const anchor = label.getAttribute('text-anchor');
+        let alignedDx = percentageDx;
+
+        if (anchor === 'start') {
+          alignedDx += (percentageWidth - labelWidth) / 2;
+        } else if (anchor === 'end') {
+          alignedDx += (labelWidth - percentageWidth) / 2;
+        }
+
+        label.setAttribute('dx', String(alignedDx));
+      }
+    });
+  }
+
+  /**
    * 翻译普通文本节点。
    */
   function translateTextNode(node) {
@@ -943,12 +1012,43 @@
       const key = original.trim();
 
       if (
+        [
+          'Code review',
+          'Issues',
+          'Pull requests',
+          'Commits',
+        ].includes(key)
+      ) {
+        scheduleActivityOverviewAlignment(parent);
+      }
+
+      if (
         key === 'people you follow' &&
         translateSplitPopularProjects(
           node,
           '你关注的人中的热门项目'
         )
       ) {
+        return;
+      }
+
+      if (
+        key === 'More' &&
+        parent.closest('button, [role="button"], summary')
+      ) {
+        const button = parent.closest(
+          'button, [role="button"], summary'
+        );
+
+        button.setAttribute(
+          'data-github-zh-more-button',
+          'true'
+        );
+
+        node.nodeValue = replacePreservingWhitespace(
+          original,
+          '更多'
+        );
         return;
       }
 
