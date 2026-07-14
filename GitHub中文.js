@@ -9,16 +9,20 @@
   const translations = new Map([
     // 顶部和主页导航
     ['Home', '主页'],
+    ['Homepage', '主页'],
     ['Dashboard', '仪表板'],
     ['Pull requests', '拉取请求'],
     ['Issues', '议题'],
     ['Codespaces', '代码空间'],
     ['Marketplace', '市场'],
     ['Explore', '探索'],
+    ['Agents', '智能体'],
+    ['Security and quality', '安全与质量'],
+    ['Pin', '置顶'],
 
     // Copilot 和通用导航
     ['Ask anything or type @ to add context', '询问任何问题，或输入 @ 添加上下文'],
-    ['Type', '输入'],
+    ['Type', '类型'],
     ['to search', '进行搜索'],
     ['Ask', '询问模式'],
     ['All repositories', '所有仓库'],
@@ -32,10 +36,15 @@
     ['Profile', '个人资料'],
     ['Repositories', '仓库'],
     ['Stars', '星标'],
+    ['stars', '个星标'],
+    ['watching', '人关注'],
+    ['forks', '个复刻'],
     ['Organizations', '组织'],
     ['Enterprises', '企业'],
     ['Sponsors', '赞助'],
     ['Find a repository...', '查找仓库...'],
+    ['Find a repository…', '查找仓库…'],
+    ['Find a repository', '查找仓库'],
     ['Feed', '动态'],
     ['Auto', '自动'],
     ['Follow', '关注'],
@@ -262,6 +271,17 @@
     ['Type: All', '类型：全部'],
     ['Language', '语言'],
     ['Sort by: Recently starred', '排序：最近收藏'],
+    ['Select type', '选择类型'],
+    ['Select language', '选择语言'],
+    ['Select order', '选择排序方式'],
+    ['All', '全部'],
+    ['Sources', '源仓库'],
+    ['Forks', '复刻仓库'],
+    ['Archived', '已归档'],
+    ['Can be sponsored', '可赞助'],
+    ['Mirrors', '镜像仓库'],
+    ['Templates', '模板仓库'],
+    ['Last updated', '最近更新'],
     ['Starred', '已收藏'],
     ['Forked from', '派生自'],
 
@@ -410,7 +430,94 @@
     ['Visibility', '可见性'],
     ['Initialize this repository with:', '初始化此仓库：'],
     ['Add a README file', '添加 README 文件'],
+    ['Add a README', '添加 README'],
+    ['Help people interested in this repository understand your project.', '帮助对此仓库感兴趣的人了解你的项目。'],
     ['Choose a license', '选择许可证'],
+    ['No description, website, or topics provided.', '未提供说明、网站或主题。'],
+    ['No releases published', '暂无已发布的发行版'],
+    ['Create a new release', '创建新发行版'],
+    ['No packages published', '暂无已发布的软件包'],
+    ['Publish your first package', '发布你的第一个软件包'],
+    ['Suggested workflows', '推荐工作流'],
+    ['Based on your tech stack', '根据你的技术栈推荐'],
+    ['Configure', '配置'],
+    ['Publish Node.js Package to GitHub Packages', '将 Node.js 软件包发布到 GitHub Packages'],
+    ['Publishes a Node.js package to GitHub Packages.', '将 Node.js 软件包发布到 GitHub Packages。'],
+    ['SLSA Generic generator', 'SLSA 通用生成器'],
+    ['Generate SLSA3 provenance for your existing release workflows', '为现有发布工作流生成 SLSA3 来源证明'],
+    ['Build a NodeJS project with npm and webpack.', '使用 npm 和 webpack 构建 Node.js 项目。'],
+    ['More workflows', '更多工作流'],
+    ['Dismiss suggestions', '忽略建议'],
+    ['Participating and @mentions', '参与和 @提及'],
+    ['Only receive notifications from this repository when participating or @mentioned.', '仅在参与或被 @提及时接收此仓库的通知。'],
+    ['All Activity', '所有活动'],
+    ['Notified of all notifications on this repository.', '接收此仓库的所有通知。'],
+    ['Ignore', '忽略'],
+    ['Never be notified.', '不接收任何通知。'],
+    ['Custom', '自定义'],
+    ['Select events you want to be notified of in addition to participating and @mentions.', '除参与和 @提及外，选择你还希望接收通知的事件。'],
+    ['Existing forks', '现有派生仓库'],
+    ["You don't have any forks of this repository.", '你没有此仓库的任何派生副本。'],
+    ['Create a new fork', '创建新的派生仓库'],
+    ['Add this repository to a list', '将此仓库添加到列表'],
+    ['0 stars', '0 个星标'],
+    ['0 watching', '0 人关注'],
+    ['0 forks', '0 个复刻'],
+    ['Edit repository details', '编辑仓库详细信息'],
+    ['Short description of this repository', '此仓库的简短说明'],
+    ['Website', '网站'],
+    ['Enter a valid URL', '输入有效网址'],
+    ['Topics (separate with spaces)', '主题（用空格分隔）'],
+    ['Topics', '主题'],
+    ['(separate with spaces)', '（用空格分隔）'],
+    ['Include in the home page', '在主页中显示'],
+    ['Save changes', '保存更改'],
+    ['A fork is a copy of a repository. Forking a repository allows you to freely experiment with changes without affecting the original project.', '派生仓库是仓库的副本。你可以在不影响原项目的情况下自由尝试更改。'],
+    ['Required fields are marked with an asterisk (*).', '必填字段标有星号（*）。'],
+    ['Choose an owner', '选择所有者'],
+    ['By default, forks are named the same as their upstream repository. You can customize the name to distinguish it further.', '默认情况下，派生仓库与上游仓库同名。你可以自定义名称以便区分。'],
+    ['Copy the', '仅复制'],
+    ['branch only', '分支'],
+    ['Create fork', '创建派生仓库'],
+    ['Files', '文件'],
+    ['Cancel changes', '取消更改'],
+    ['Commit changes...', '提交更改...'],
+    ['Commit changes…', '提交更改…'],
+    ['Spaces', '空格'],
+    ['No wrap', '不换行'],
+    ['Enter file contents here', '在此输入文件内容'],
+    ['Use', '使用'],
+    ['to toggle the', '切换'],
+    ['key moving focus. Alternatively, use', '键移动焦点。或者，先按'],
+    ['then', '然后'],
+    ['to move to the next interactive element on the page.', '移动到页面上的下一个交互元素。'],
+    ['Attach files by dragging & dropping, selecting or pasting them.', '可通过拖放、选择或粘贴来附加文件。'],
+    ['Indent mode', '缩进模式'],
+    ['Indent size', '缩进宽度'],
+    ['Tabs', '制表符'],
+    ['Line wrap mode', '换行模式'],
+    ['Soft wrap', '自动换行'],
+    ['Loading preview...', '正在加载预览...'],
+    ['Loading preview…', '正在加载预览…'],
+    ['There is no content to preview.', '没有可预览的内容。'],
+    ['Switch branches/tags', '切换分支/标签'],
+    ['Find or create a branch...', '查找或创建分支...'],
+    ['Find or create a branch…', '查找或创建分支…'],
+    ['Search or create a new tag', '搜索或创建新标签'],
+    ['Search or create a new tag...', '搜索或创建新标签...'],
+    ['Search or create a new tag…', '搜索或创建新标签…'],
+    ['default', '默认'],
+    ['View all branches', '查看所有分支'],
+    ['View all tags', '查看所有标签'],
+    ['branches', '分支'],
+    ['tags', '标签'],
+    ['Nothing to show', '暂无内容'],
+    ['Search this repository', '搜索此仓库'],
+    ['Expand file tree', '展开文件树'],
+    ['Collapse file tree', '收起文件树'],
+    ['You have unsaved changes on this file that can be restored.', '此文件有可恢复的未保存更改。'],
+    ['Discard', '丢弃'],
+    ['Restore', '恢复'],
     ['Choose a .gitignore template', '选择 .gitignore 模板'],
 
     // 表单
@@ -476,6 +583,12 @@
   };
 
   const partialTranslations = [
+    [/(\d[\d,]*)\s*\/\s*(\d[\d,]*)\s+characters\b/gi, '$1 / $2 个字符'],
+    [/\bContribute back to ([A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+) by adding your own branch\./g, '通过添加自己的分支向 $1 贡献代码。'],
+    [/\bFork your own copy of ([A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+)\b/g, '派生你自己的 $1 副本'],
+    [/\b(\d[\d,]*)\s+stars?\b/gi, '$1 个星标'],
+    [/\b(\d[\d,]*)\s+watching\b/gi, '$1 人关注'],
+    [/\b(\d[\d,]*)\s+forks?\b/gi, '$1 个复刻'],
     [/\bContribution activity in ([A-Za-z0-9_.\/-]+)/g, '在 $1 中的贡献活动'],
     [/\bActivity\s+in\s+([A-Za-z0-9_.\/-]+)/g, '在 $1 中的活动'],
     [/\bActivity\s+in\s*$/g, '活动：'],
@@ -697,6 +810,7 @@
     'data-content',
     'data-placeholder',
     'data-confirm',
+    'label',
   ];
 
   const compactTabStyles = `
@@ -772,6 +886,16 @@
     'Ask anything or type @ to add context',
     'Ask Copilot...',
     'Ask Copilot…',
+    'Find a repository...',
+    'Find a repository…',
+    'Find a repository',
+    'Enter file contents here',
+    'Find or create a branch...',
+    'Find or create a branch…',
+    'Search or create a new tag',
+    'Search or create a new tag...',
+    'Search or create a new tag…',
+    'Attach files by dragging & dropping, selecting or pasting them.',
   ]);
 
   let scheduled = false;
@@ -1010,8 +1134,12 @@
 
     const isKnownEditablePlaceholder =
       Boolean(parent) &&
-      isWithinEditableControl(parent) &&
-      editablePlaceholderTexts.has(original.trim());
+      editablePlaceholderTexts.has(original.trim()) &&
+      (
+        isWithinEditableControl(parent) ||
+        original.trim() ===
+          'Attach files by dragging & dropping, selecting or pasting them.'
+      );
 
     if (
       !parent ||
@@ -1021,11 +1149,38 @@
     }
 
     // 优先完整匹配
-    const exactTranslation = translateExact(original);
+    let exactTranslation = translateExact(original);
+
+    const key = original.trim();
+    const isGlobalHeader = Boolean(parent.closest('header'));
+    const isSelectionMenu = Boolean(
+      parent.closest('[role="menu"], [role="dialog"]')
+    );
+    const isRepositoryListDialog = Boolean(
+      parent.closest(
+        '[id*="user-list"][id*="dialog"], [aria-labelledby*="user-list"]'
+      )
+    );
+
+    if (key === 'Type' && isGlobalHeader) {
+      exactTranslation = '输入';
+    } else if (isSelectionMenu && key === 'Name') {
+      exactTranslation = '名称';
+    } else if (isSelectionMenu && key === 'Stars') {
+      exactTranslation = '星标数';
+    } else if (
+      (isSelectionMenu || isRepositoryListDialog) &&
+      key === 'Lists'
+    ) {
+      exactTranslation = '收藏列表';
+    } else if (
+      (isSelectionMenu || isRepositoryListDialog) &&
+      key === 'Create list'
+    ) {
+      exactTranslation = '创建收藏列表';
+    }
 
     if (exactTranslation) {
-      const key = original.trim();
-
       if (
         [
           'Code review',
@@ -1231,6 +1386,83 @@
   }
 
   /**
+   * 文件编辑器会把附件提示放在被忽略的编辑区容器中。
+   * 通过固定的文件输入框定位提示，避免触碰用户编辑内容。
+   */
+  function translateFileAttachmentHint(root) {
+    const inputs = [];
+    const hints = [];
+
+    if (
+      root instanceof Element &&
+      root.matches('span.default')
+    ) {
+      hints.push(root);
+    }
+
+    if ('querySelectorAll' in root) {
+      hints.push(...root.querySelectorAll('span.default'));
+    }
+
+    for (const hint of hints) {
+      if (
+        hint.textContent?.trim() ===
+        'Attach files by dragging & dropping, selecting or pasting them.'
+      ) {
+        hint.textContent = '可通过拖放、选择或粘贴来附加文件。';
+      }
+    }
+
+    if (
+      root instanceof Element &&
+      root.matches('#blob-dragged-file-input')
+    ) {
+      inputs.push(root);
+    }
+
+    if ('querySelectorAll' in root) {
+      inputs.push(
+        ...root.querySelectorAll('#blob-dragged-file-input')
+      );
+    }
+
+    for (const input of inputs) {
+      let container = input.parentElement;
+
+      for (let depth = 0; container && depth < 10; depth += 1) {
+        if (
+          container.textContent?.includes(
+            'Attach files by dragging & dropping, selecting or pasting them.'
+          )
+        ) {
+          const walker = document.createTreeWalker(
+            container,
+            NodeFilter.SHOW_TEXT
+          );
+          let node;
+
+          while ((node = walker.nextNode())) {
+            if (
+              node.nodeValue?.includes(
+                'Attach files by dragging & dropping, selecting or pasting them.'
+              )
+            ) {
+              node.nodeValue = node.nodeValue.replace(
+                'Attach files by dragging & dropping, selecting or pasting them.',
+                '可通过拖放、选择或粘贴来附加文件。'
+              );
+            }
+          }
+
+          break;
+        }
+
+        container = container.parentElement;
+      }
+    }
+  }
+
+  /**
    * 翻译一个节点及其子树。
    */
   function translateTree(root) {
@@ -1248,6 +1480,8 @@
     ) {
       return;
     }
+
+    translateFileAttachmentHint(root);
 
     if (
       root instanceof Document ||
