@@ -157,11 +157,14 @@
     // 个人资料和贡献图表
     ['Overview', '概览'],
     ['Edit profile', '编辑个人资料'],
-    ['China', '中国'],
     ['Achievements', '成就'],
     ['Pinned', '置顶'],
     ['Customize your pins', '自定义置顶项目'],
     ['Contribution settings', '贡献设置'],
+    ['Private contributions', '私有贡献'],
+    ['Turning off private contributions will show only public activity on your profile.', '关闭私有贡献后，你的个人资料中将只显示公开活动。'],
+    ['Activity overview', '活动概览'],
+    ['Turning on the activity overview will show an overview of your activity across organizations and repositories.', '启用活动概览后，将显示你在各个组织和仓库中的活动概览。'],
     ['Learn how we count contributions', '了解我们如何计算贡献'],
     ['Less', '少'],
     ['More', '多'],
@@ -208,6 +211,54 @@
     ['First pull request', '首个拉取请求'],
     ['had no activity during this period.', '在此期间没有活动。'],
 
+    // 成就详情
+    ['Earned achievements', '已获得的成就'],
+    ['Pull Shark', '拉取鲨鱼'],
+    ['opened pull requests that have been merged.', '开启了已合并的拉取请求。'],
+    ['History', '历史'],
+    ['Unlocked', '已解锁'],
+    ['inaccessible', '不可访问'],
+    ['You want it? You merge it.', '想要它？合并它。'],
+    ['Merged without a review', '未经审核即合并'],
+    ['Quickdraw', '快枪手'],
+    ['Gitty up!', '出发！'],
+    ['Closed within 5 minutes of opening', '开启后 5 分钟内关闭'],
+    ['Copy share link', '复制分享链接'],
+    ['Preview on Twitter', '在 Twitter 上预览'],
+
+    // Projects 空状态
+    ['Create your first GitHub project', '创建你的第一个 GitHub 项目'],
+    ['Projects are a customizable, flexible tool for planning and tracking your work.', '项目是一种可自定义的灵活工具，用于规划和跟踪工作。'],
+    ['Welcome to Projects', '欢迎使用项目'],
+    ['Built to be flexible and adaptable, Projects gives you a live canvas to filter, sort, and group issues and pull requests in a table, board, or roadmap. Tailor them to your needs with custom fields, saved views, workflows, and insights.', '项目灵活且适应性强，为你提供实时画布，可在表格、看板或路线图中筛选、排序和分组议题与拉取请求。你还可使用自定义字段、已保存视图、工作流和洞察，按需调整项目。'],
+    ['Jump right in', '立即开始'],
+    ['Project closed.', '项目已关闭。'],
+    ['No open projects', '没有开启的项目'],
+
+    // GitHub Packages
+    ['Get started with GitHub Packages', '开始使用 GitHub Packages'],
+    ['Safely publish packages, store your packages alongside your code, and share your packages privately with your team.', '安全地发布软件包，将软件包与代码一起存储，并与团队私密共享。'],
+    ['Choose a registry', '选择软件包注册表'],
+    ['A default package manager used for the Java programming language and the Java runtime environment.', 'Java 编程语言和 Java 运行时环境使用的默认包管理器。'],
+    ['A free and open source package manager used for the Microsoft development platforms including .NET.', '用于 Microsoft 开发平台（包括 .NET）的免费开源包管理器。'],
+    ['A standard format for distributing Ruby programs and libraries used for the Ruby programming language.', '用于分发 Ruby 程序和库的标准格式。'],
+    ['A package manager for JavaScript, included with Node.js. npm makes it easy for developers to share and reuse code.', 'JavaScript 包管理器，随 Node.js 一起提供。npm 让开发者能够轻松共享和复用代码。'],
+    ['A single place for your team to manage Docker images and decide who can see and access your images.', '团队集中管理 Docker 镜像并决定访问权限的地方。'],
+
+    // Stars 和列表
+    ['Lists', '列表'],
+    ['Create list', '创建列表'],
+    ['Create your first list', '创建你的第一个列表'],
+    ['Create your first list.', '创建你的第一个列表。'],
+    ['Lists make it easier to organize and curate repositories that you have starred.', '列表可让你更轻松地组织和整理已收藏的仓库。'],
+    ['Lists make it easier to organize and curate repositories that you have starred. Create your first list.', '列表可让你更轻松地组织和整理已收藏的仓库。创建你的第一个列表。'],
+    ['Search stars', '搜索收藏'],
+    ['Type: All', '类型：全部'],
+    ['Language', '语言'],
+    ['Sort by: Recently starred', '排序：最近收藏'],
+    ['Starred', '已收藏'],
+    ['Forked from', '派生自'],
+
     // 编辑个人资料
     ['Name', '姓名'],
     ['Bio', '简介'],
@@ -217,6 +268,7 @@
     ['Pronouns', '代词'],
     ["Don't specify", '不指定'],
     ['Company', '公司'],
+    ['Location', '位置'],
     ['Display current local time', '显示当前本地时间'],
     ['(GMT+08:00) Beijing', '(GMT+08:00) 北京'],
     ['Social accounts', '社交账户'],
@@ -419,10 +471,15 @@
 
   const partialTranslations = [
     // 个人资料和贡献时间线的完整动态句
+    [/(@[A-Za-z0-9_.-]+)\s+opened\s+pull\s+requests\s+that\s+have\s+been\s+merged\./gi, '$1 开启了已合并的拉取请求。'],
+    [/\b(\d+)%\s+unlocked\b/gi, '已解锁 $1%'],
+    [/\b(\d+)(?:st|nd|rd|th)\s+pull\s+request\s+merged\b/gi, '第 $1 个拉取请求已合并'],
     [/\bJoined\s+the\s+([A-Za-z0-9_.-]+)\s+organization\b/gi, '加入了 $1 组织'],
     [/\b([A-Za-z0-9_.-]+)\s+had\s+no\s+activity\s+during\s+this\s+period\./gi, '$1 在此期间没有活动。'],
     [/\bLink\s+to\s+social\s+profile\s+(\d+)\b/gi, '社交资料链接 $1'],
     [/\b(\d[\d,]*)\s+contributions?\s+in\s+the\s+last\s+year\b/gi, '过去一年有 $1 次贡献'],
+    [/\b(\d[\d,]*)\s+contributions?\s+in\s+(\d{4})\b/gi, '$2 年有 $1 次贡献'],
+    [/\bLists\s*\((\d[\d,]*)\)/gi, '列表 ($1)'],
     [/\bCreated\s+(\d[\d,]*)\s+commits?\s+in\s+(\d[\d,]*)\s+repositor(?:y|ies)\b/gi, '在 $2 个仓库中创建了 $1 次提交'],
     [/\bCreated\s+(\d[\d,]*)\s+repositor(?:y|ies)\b/gi, '创建了 $1 个仓库'],
     [/\bOpened\s+(\d[\d,]*)\s+pull requests?\s+in\s+(\d[\d,]*)\s+repositor(?:y|ies)\b/gi, '在 $2 个仓库中开启了 $1 个拉取请求'],
@@ -431,9 +488,39 @@
 
     // 时间线标题与日期
     [
+      /\b(\d[\d,]*)\s+contributions?\s+on\s+(January|February|March|April|May|June|July|August|September|October|November|December)\s+(\d+)(?:st|nd|rd|th)\./gi,
+      (_, count, month, day) =>
+        `${monthNumbers[month.slice(0, 3).toLowerCase()]} 月 ${day} 日有 ${count} 次贡献。`,
+    ],
+    [
+      /\bNo\s+contributions?\s+on\s+(January|February|March|April|May|June|July|August|September|October|November|December)\s+(\d+)(?:st|nd|rd|th)\./gi,
+      (_, month, day) =>
+        `${monthNumbers[month.slice(0, 3).toLowerCase()]} 月 ${day} 日没有贡献。`,
+    ],
+    [
+      /\bUpdated\s+on\s+(Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)\s+(\d{1,2}),\s+(\d{4})\b/gi,
+      (_, month, day, year) =>
+        `更新于 ${year} 年 ${monthNumbers[month.slice(0, 3).toLowerCase()]} 月 ${day} 日`,
+    ],
+    [
+      /\bUpdated\s+on\s+(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s+(\d{1,2})\b/gi,
+      (_, month, day) =>
+        `更新于 ${monthNumbers[month.toLowerCase()]} 月 ${day} 日`,
+    ],
+    [
+      /\bUnlocked\s+on\s+(Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)\s+(\d{1,2}),\s+(\d{4})\b/gi,
+      (_, month, day, year) =>
+        `于 ${year} 年 ${monthNumbers[month.slice(0, 3).toLowerCase()]} 月 ${day} 日解锁`,
+    ],
+    [
+      /\bon\s+(Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)\s+(\d{1,2}),\s+(\d{4})\b/gi,
+      (_, month, day, year) =>
+        `${year} 年 ${monthNumbers[month.slice(0, 3).toLowerCase()]} 月 ${day} 日`,
+    ],
+    [
       /\bon\s+(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s+(\d{1,2})\b/gi,
       (_, month, day) =>
-        `于 ${monthNumbers[month.toLowerCase()]} 月 ${day} 日`,
+        `${monthNumbers[month.toLowerCase()]} 月 ${day} 日`,
     ],
     [
       /\b(January|February|March|April|May|June|July|August|September|October|November|December)\s+(\d{4})\b/gi,
@@ -501,6 +588,7 @@
     [/\blast week\b/gi, '上周'],
     [/\blast month\b/gi, '上个月'],
     [/\blast year\b/gi, '去年'],
+    [/\bUnlocked\b/gi, '已解锁'],
 
     // 主页动态可能与用户名位于同一文本节点
     [/\bmade this repository public\b/gi, '将此仓库设为公开'],
@@ -618,32 +706,6 @@
       column-gap: 4px !important;
     }
 
-    ul[data-component="ActionList"][role="menu"] {
-      width: max-content !important;
-      min-width: 200px !important;
-      max-width: min(420px, calc(100vw - 24px)) !important;
-      overflow-x: hidden !important;
-    }
-
-    :where(
-      [class*="prc-Overlay-"],
-      [class*="prc-ActionMenu-"],
-      div,
-      section
-    ):has(
-      > ul[data-component="ActionList"][role="menu"]
-    ) {
-      --overlay-width: max-content !important;
-      width: fit-content !important;
-      min-width: 0 !important;
-      max-width: min(420px, calc(100vw - 24px)) !important;
-    }
-
-    ul[data-component="ActionList"][role="menu"]
-      [data-component="ActionList.Item.Label"] {
-      white-space: nowrap !important;
-    }
-
     :where(
       [class*="prc-Overlay-"],
       [class*="prc-ActionMenu-"]
@@ -652,6 +714,24 @@
       width: fit-content !important;
       min-width: 0 !important;
       max-width: min(420px, calc(100vw - 24px)) !important;
+    }
+
+    :where(
+      [class*="prc-Overlay-"],
+      [class*="prc-ActionMenu-"]
+    ) ul[data-component="ActionList"][role="menu"] {
+      width: max-content !important;
+      min-width: 200px !important;
+      max-width: min(420px, calc(100vw - 24px)) !important;
+      overflow-x: hidden !important;
+    }
+
+    :where(
+      [class*="prc-Overlay-"],
+      [class*="prc-ActionMenu-"]
+    ) ul[data-component="ActionList"][role="menu"]
+      [data-component="ActionList.Item.Label"] {
+      white-space: nowrap !important;
     }
   `;
 
