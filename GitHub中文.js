@@ -173,6 +173,8 @@
     ['Less', '少'],
     ['More', '多'],
     ['Contribution activity', '贡献活动'],
+    ['Activity in', '活动：'],
+    ['yet for this period.', '中有活动。'],
     ['merged', '已合并'],
     ['Show more activity', '显示更多活动'],
     ['Seeing something unexpected? Take a look at the GitHub profile guide.', '遇到意外情况？请查看 GitHub 个人资料指南。'],
@@ -474,6 +476,16 @@
   };
 
   const partialTranslations = [
+    [/\bContribution activity in ([A-Za-z0-9_.\/-]+)/g, '在 $1 中的贡献活动'],
+    [/\bActivity\s+in\s+([A-Za-z0-9_.\/-]+)/g, '在 $1 中的活动'],
+    [/\bActivity\s+in\s*$/g, '活动：'],
+    [/\b([A-Za-z0-9_.-]+)\s+has\s+no\s+activity\s+in\s+([A-Za-z0-9_.\/-]+)\s+yet\s+for\s+this\s+period\./g, '$1 在此期间尚未在 $2 中有活动。'],
+    [/\b([A-Za-z0-9_.-]+)\s+has\s+no\s+activity\s+in\s*$/g, '$1 在此期间尚未在 '],
+    [/\b([A-Za-z0-9_.-]+)\s+had\s+no\s+activity\s+in\s+([A-Za-z0-9_.\/-]+)\s+during\s+this\s+period\./g, '$1 在此期间未在 $2 中有活动。'],
+    [/\b([A-Za-z0-9_.-]+)\s+had\s+no\s+activity\s+in\s*$/g, '$1 在此期间未在 '],
+    [/^\s*during\s+this\s+period\./g, '中有活动。'],
+    [/\b(\d[\d,]*)\s+contributions?\s+in\s+the\s+last\s+year\s+in\s+([A-Za-z0-9_.\/-]+)/gi, '过去一年在 $2 有 $1 次贡献'],
+    [/过去一年有\s+(\d[\d,]*)\s+次贡献\s+in\s+([A-Za-z0-9_.\/-]+)/g, '过去一年在 $2 有 $1 次贡献'],
     [/Turning off the 活动概览 will hide the section on your profile\./g, '关闭活动概览后，你的个人资料中将隐藏此部分。'],
     // 个人资料和贡献时间线的完整动态句
     [/(@[A-Za-z0-9_.-]+)\s+opened\s+pull\s+requests\s+that\s+have\s+been\s+merged\./gi, '$1 开启了已合并的拉取请求。'],
