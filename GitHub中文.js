@@ -135,6 +135,19 @@
     ['Create new...', '新建...'],
     ['Create new…', '新建…'],
 
+    // 关注动态
+    ['Popular projects among people you follow', '你关注的人中的热门项目'],
+    ['people you follow', '你关注的人'],
+
+    // 加载和组织菜单
+    ['One moment please...', '稍等下下....'],
+    ['One moment please…', '稍等下下....'],
+    ['Loading more...', '正在加载更多...'],
+    ['Loading more…', '正在加载更多…'],
+    ['Go to organization dashboard', '前往组织仪表板'],
+    ['Manage organizations', '管理组织'],
+    ['Create organization', '创建组织'],
+
     // 用户和仓库数量后缀
     ['followers', '关注'],
     ['repositories', '个仓库'],
@@ -613,6 +626,35 @@
   }
 
   /**
+   * 该句的中文语序与英文相反。当后半句是链接时，将整句
+   * 放入链接文本，避免生硬的分段翻译。
+   */
+  function translateSplitPopularProjects(node, translated) {
+    const whitespaceNodes = [];
+    let previous = getPreviousTextNode(node);
+
+    while (previous && !previous.nodeValue?.trim()) {
+      whitespaceNodes.push(previous);
+      previous = getPreviousTextNode(previous);
+    }
+
+    if (previous?.nodeValue?.trim() !== 'Popular projects among') {
+      return false;
+    }
+
+    previous.nodeValue = '';
+
+    for (const whitespaceNode of whitespaceNodes) {
+      whitespaceNode.nodeValue = '';
+    }
+
+    const trailing = node.nodeValue?.match(/\s*$/)?.[0] ?? '';
+    node.nodeValue = `${translated}${trailing}`;
+
+    return true;
+  }
+
+  /**
    * 翻译普通文本节点。
    */
   function translateTextNode(node) {
@@ -640,6 +682,16 @@
 
     if (exactTranslation) {
       const key = original.trim();
+
+      if (
+        key === 'people you follow' &&
+        translateSplitPopularProjects(
+          node,
+          '你关注的人中的热门项目'
+        )
+      ) {
+        return;
+      }
 
       /**
        * started following 后面通常紧跟独立的 you 元素。
