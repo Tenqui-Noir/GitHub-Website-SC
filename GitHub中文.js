@@ -49,6 +49,7 @@
     ['GitHub Code Quality license estimate in public preview', 'GitHub 代码质量许可证估算功能开放公开预览'],
     ['Separate SSO and Organizations pages in Settings', '设置中的 SSO 和组织页面已分开'],
     ['CodeQL 2.26.0 adds Kotlin 2.4.0 support and AI prompt injection...', 'CodeQL 2.26.0 新增 Kotlin 2.4.0 支持和 AI 提示词注入...'],
+    ['CodeQL 2.26.0 adds Kotlin 2.4.0 support and AI prompt injection detection', 'CodeQL 2.26.0 新增对 Kotlin 2.4.0 的支持及 AI 提示词注入检测'],
     ['Clearer names for secret scanning detector types', '为机密扫描检测器类型提供更清晰的名称'],
     ['OCT 28-29', '10 月 28-29 日'],
     ['SAN FRANCISCO, CA', '美国加州旧金山'],
@@ -144,9 +145,81 @@
     ['One moment please…', '稍等下下....'],
     ['Loading more...', '正在加载更多...'],
     ['Loading more…', '正在加载更多…'],
+    ['Loading...', '加载中...'],
+    ['Loading…', '加载中…'],
+    ['Joined the', '加入了'],
+    ['organization', '组织'],
+    ['on', '于'],
     ['Go to organization dashboard', '前往组织仪表板'],
     ['Manage organizations', '管理组织'],
     ['Create organization', '创建组织'],
+
+    // 个人资料和贡献图表
+    ['Overview', '概览'],
+    ['Edit profile', '编辑个人资料'],
+    ['China', '中国'],
+    ['Achievements', '成就'],
+    ['Pinned', '置顶'],
+    ['Customize your pins', '自定义置顶项目'],
+    ['Contribution settings', '贡献设置'],
+    ['Learn how we count contributions', '了解我们如何计算贡献'],
+    ['Less', '少'],
+    ['More', '多'],
+    ['Contribution activity', '贡献活动'],
+    ['merged', '已合并'],
+    ['Show more activity', '显示更多活动'],
+    ['Seeing something unexpected? Take a look at the GitHub profile guide.', '遇到意外情况？请查看 GitHub 个人资料指南。'],
+    ['Seeing something unexpected? Take a look at the', '遇到意外情况？请查看'],
+    ['GitHub profile guide.', 'GitHub 个人资料指南。'],
+    ['GitHub profile guide', 'GitHub 个人资料指南'],
+    ['following', '正在关注'],
+
+    // 贡献图月份和星期
+    ['Jan', '1 月'],
+    ['Feb', '2 月'],
+    ['Mar', '3 月'],
+    ['Apr', '4 月'],
+    ['May', '5 月'],
+    ['Jun', '6 月'],
+    ['Jul', '7 月'],
+    ['Aug', '8 月'],
+    ['Sep', '9 月'],
+    ['Oct', '10 月'],
+    ['Nov', '11 月'],
+    ['Dec', '12 月'],
+    ['Mon', '周一'],
+    ['Wed', '周三'],
+    ['Fri', '周五'],
+    ['January', '1 月'],
+    ['February', '2 月'],
+    ['March', '3 月'],
+    ['April', '4 月'],
+    ['June', '6 月'],
+    ['July', '7 月'],
+    ['August', '8 月'],
+    ['September', '9 月'],
+    ['October', '10 月'],
+    ['November', '11 月'],
+    ['December', '12 月'],
+
+    // 个人资料成就
+    ['Opened their first pull request on GitHub in', '在 GitHub 上开启了首个拉取请求，所在仓库：'],
+    ['Congratulations on your first pull request!', '恭喜你创建了第一个拉取请求！'],
+    ['First pull request', '首个拉取请求'],
+
+    // 编辑个人资料
+    ['Name', '姓名'],
+    ['Bio', '简介'],
+    ['You can @mention other users and organizations to link to them.', '你可以使用 @ 提及其他用户和组织，以链接到他们。'],
+    ['You can', '你可以使用'],
+    ['other users and organizations to link to them.', '提及其他用户和组织，并链接到他们。'],
+    ['Pronouns', '代词'],
+    ["Don't specify", '不指定'],
+    ['Company', '公司'],
+    ['Display current local time', '显示当前本地时间'],
+    ['(GMT+08:00) Beijing', '(GMT+08:00) 北京'],
+    ['Social accounts', '社交账户'],
+    ['Change your avatar', '更换头像'],
 
     // 用户和仓库数量后缀
     ['followers', '关注'],
@@ -201,8 +274,6 @@
     ['Deployments', '部署'],
     ['Languages', '语言'],
     ['About', '关于'],
-    ['Readme', '自述文件'],
-    ['README', '自述文件'],
     ['Activity', '动态'],
     ['Resources', '资源'],
 
@@ -330,7 +401,50 @@
    * 用于带用户名、数字或其他动态变量的句子。
    * 越具体的规则应当放得越靠前。
    */
+  const monthNumbers = {
+    jan: 1,
+    feb: 2,
+    mar: 3,
+    apr: 4,
+    may: 5,
+    jun: 6,
+    jul: 7,
+    aug: 8,
+    sep: 9,
+    oct: 10,
+    nov: 11,
+    dec: 12,
+  };
+
   const partialTranslations = [
+    // 个人资料和贡献时间线的完整动态句
+    [/\bJoined\s+the\s+([A-Za-z0-9_.-]+)\s+organization\b/gi, '加入了 $1 组织'],
+    [/\b([A-Za-z0-9_.-]+)\s+had\s+no\s+activity\s+during\s+this\s+period\./gi, '$1 在此期间没有活动。'],
+    [/\bLink\s+to\s+social\s+profile\s+(\d+)\b/gi, '社交资料链接 $1'],
+    [/\b(\d[\d,]*)\s+contributions?\s+in\s+the\s+last\s+year\b/gi, '过去一年有 $1 次贡献'],
+    [/\bCreated\s+(\d[\d,]*)\s+commits?\s+in\s+(\d[\d,]*)\s+repositor(?:y|ies)\b/gi, '在 $2 个仓库中创建了 $1 次提交'],
+    [/\bCreated\s+(\d[\d,]*)\s+repositor(?:y|ies)\b/gi, '创建了 $1 个仓库'],
+    [/\bOpened\s+(\d[\d,]*)\s+pull requests?\s+in\s+(\d[\d,]*)\s+repositor(?:y|ies)\b/gi, '在 $2 个仓库中开启了 $1 个拉取请求'],
+    [/\b(\d[\d,]*)\s+contributions?\s+in\s+private\s+repositories\b/gi, '$1 次私有仓库贡献'],
+    [/\b(\d[\d,]*)\s+following\b/gi, '正在关注 $1 人'],
+
+    // 时间线标题与日期
+    [
+      /\bon\s+(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s+(\d{1,2})\b/gi,
+      (_, month, day) =>
+        `于 ${monthNumbers[month.toLowerCase()]} 月 ${day} 日`,
+    ],
+    [
+      /\b(January|February|March|April|May|June|July|August|September|October|November|December)\s+(\d{4})\b/gi,
+      (_, month, year) =>
+        `${year} 年 ${monthNumbers[month.slice(0, 3).toLowerCase()]} 月`,
+    ],
+    [
+      /\b(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s+(\d{1,2})\b/gi,
+      (_, month, day) =>
+        `${monthNumbers[month.toLowerCase()]} 月 ${day} 日`,
+    ],
+
     // 动态和通知
     [/\bstarted following\s+you\b/gi, '开始关注你'],
 
@@ -472,9 +586,37 @@
     'aria-placeholder',
     'title',
     'placeholder',
+    'data-content',
     'data-placeholder',
     'data-confirm',
   ];
+
+  const compactTabStyles = `
+    a[data-tab-item] {
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: flex-start !important;
+      flex: 0 0 auto !important;
+      width: auto !important;
+      min-width: max-content !important;
+      column-gap: 6px !important;
+      padding-inline: 12px !important;
+    }
+
+    a[data-tab-item] > [data-component] {
+      flex: 0 0 auto !important;
+      margin-inline: 0 !important;
+    }
+
+    a[data-tab-item] > [data-component="counter"] {
+      margin-left: 2px !important;
+    }
+
+    :where(nav, div):has(> a[data-tab-item]) {
+      justify-content: flex-start !important;
+      column-gap: 4px !important;
+    }
+  `;
 
   /**
    * 短时间内可能出现很多 DOM 更新。
@@ -700,7 +842,8 @@
       if (
         key === 'started following' ||
         key === 'starred' ||
-        key === 'Upgrade'
+        key === 'Upgrade' ||
+        key === 'Joined the'
       ) {
         const leading = original.match(/^\s*/)?.[0] ?? '';
         node.nodeValue = `${leading}${exactTranslation}`;
@@ -729,6 +872,9 @@
           ['Upgrade', '升级']
         )
       ) {
+        const trailing = original.match(/\s*$/)?.[0] ?? '';
+        node.nodeValue = `${exactTranslation}${trailing}`;
+      } else if (key === 'organization') {
         const trailing = original.match(/\s*$/)?.[0] ?? '';
         node.nodeValue = `${exactTranslation}${trailing}`;
       } else {
@@ -827,6 +973,24 @@
   }
 
   /**
+   * 让个人页标签按翻译后的内容宽度紧凑排列。
+   */
+  function injectCompactTabStyles(root) {
+    if (!root?.querySelector) return;
+    if (root.querySelector('#github-zh-compact-tabs')) return;
+
+    const style = document.createElement('style');
+    style.id = 'github-zh-compact-tabs';
+    style.textContent = compactTabStyles;
+
+    if (root instanceof Document) {
+      (root.head || root.documentElement).append(style);
+    } else {
+      root.append(style);
+    }
+  }
+
+  /**
    * 翻译一个节点及其子树。
    */
   function translateTree(root) {
@@ -843,6 +1007,13 @@
       !(root instanceof Element)
     ) {
       return;
+    }
+
+    if (
+      root instanceof Document ||
+      (root instanceof DocumentFragment && 'host' in root)
+    ) {
+      injectCompactTabStyles(root);
     }
 
     if (root instanceof Element) {
@@ -1058,6 +1229,7 @@
       return;
     }
 
+    injectCompactTabStyles(document);
     observeRoot(document.documentElement);
 
     scheduleTranslation(document.documentElement);
