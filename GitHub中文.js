@@ -1018,6 +1018,19 @@
     ['committed', '提交'],
     ['Users that are not', '非'],
     ['When enabled, only users explicitly granted access to this repository will be able to submit pull request reviews that "approve" or "request changes". All users able to submit comment pull request reviews will continue to be able to do so.', '启用后，只有被明确授予此仓库访问权限的用户才能提交“批准”或“请求更改”的拉取请求审核。所有能够提交评论型拉取请求审核的用户仍可继续这样做。'],
+
+    // GitHub App 安装和授权（应用名称与跳转地址保持原文）
+    ['Install & Authorize', '安装并授权'],
+    ['for these repositories:', '为以下仓库：'],
+    ['Repository access', '仓库访问权限'],
+    ['Only select repositories', '仅选择仓库'],
+    ['This applies to all current and future repositories owned by the resource owner. Also includes public repositories (read-only).', '此设置适用于资源所有者当前和未来拥有的所有仓库，也包括公开仓库（只读）。'],
+    ['Select at least one repository. Also includes public repositories (read-only).', '请至少选择一个仓库，也包括公开仓库（只读）。'],
+    ['with these permissions:', '具有以下权限：'],
+    ['access to metadata', '访问元数据'],
+    ['access to administration, checks, code, deployments, and pull requests', '访问管理、检查、代码、部署和拉取请求'],
+    ['Installing & Authorizing', '正在安装并授权'],
+    ['Next: you\'ll be redirected to', '下一步：你将被重定向到'],
   ]);
 
   /**
@@ -1234,6 +1247,7 @@
     [/^\s*Add teams to\s+(.+?)\s*$/gi, '向 $1 添加团队'],
     [/^\s*Remove\s+(.+?)\s+from this repository\s*$/gi, '从此仓库中移除 $1'],
     [/^\s*Admin as owner of the\s+(.+?)\s+organization\.\s*$/gi, '作为 $1 组织所有者的管理员。'],
+    [/^\s*Install & Authorize on your organization\s+(.+?)\s*$/gi, '在你的组织 $1 中安装并授权'],
     [/^\s*(\d[\d,]*)\s+actors?\s*$/gi, '$1 个参与者'],
     [/^\s*(\d[\d,]*)\s+suggestions?\.?\s*$/gi, '$1 条建议。'],
     [/^\s*(\d[\d,]*)\s+teams?\s*$/gi, '$1 个团队'],
@@ -1763,6 +1777,9 @@
 
     const key = original.trim();
     const isGlobalHeader = Boolean(parent.closest('header'));
+    const isIntegrationPermission = Boolean(
+      parent.closest('.integrations-permission')
+    );
     const isSelectionMenu = Boolean(
       parent.closest('[role="menu"], [role="dialog"]')
     );
@@ -1772,7 +1789,11 @@
       )
     );
 
-    if (key === 'Type' && isGlobalHeader) {
+    if (isIntegrationPermission && key === 'and') {
+      exactTranslation = '和';
+    } else if (isIntegrationPermission && key === 'write') {
+      exactTranslation = '写入';
+    } else if (key === 'Type' && isGlobalHeader) {
       exactTranslation = '输入';
     } else if (isSelectionMenu && key === 'Name') {
       exactTranslation = '名称';
