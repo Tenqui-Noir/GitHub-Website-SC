@@ -708,6 +708,30 @@
     ['Delete this repository', '删除此仓库'],
     ['Once you delete a repository, there is no going back. Please be certain.', '仓库一旦删除便无法恢复，请务必确认。'],
     ['Updated', '更新于'],
+    ['Types', '类型'],
+    ['Feedback', '反馈'],
+    ['Give feedback', '提供反馈'],
+    ['Sort by', '排序方式'],
+    ['Created on', '创建时间'],
+    ['Total comments', '评论总数'],
+    ['Best match', '最佳匹配'],
+    ['Reactions', '反应'],
+    ['Order', '排序'],
+    ['Oldest', '最早'],
+    ['Newest', '最新'],
+    ['Filter by issue type', '按议题类型筛选'],
+    ['Filter types', '筛选类型'],
+    ['No type', '无类型'],
+    ['Issues with no type', '没有类型的议题'],
+    ['Filter assignees', '筛选受理人'],
+    ['No assignees', '未分配'],
+    ['Filter milestones', '筛选里程碑'],
+    ['No milestone', '无里程碑'],
+    ['Filter projects', '筛选项目'],
+    ['No projects were found', '未找到项目'],
+    ['Please try a different search query.', '请尝试其他搜索条件。'],
+    ['Filter labels', '筛选标签'],
+    ['No labels', '无标签'],
 
     // 设置页补充及无障碍文本
     ['Skip to content', '跳到正文'],
@@ -1031,6 +1055,35 @@
     ['access to administration, checks, code, deployments, and pull requests', '访问管理、检查、代码、部署和拉取请求'],
     ['Installing & Authorizing', '正在安装并授权'],
     ['Next: you\'ll be redirected to', '下一步：你将被重定向到'],
+
+    // 议题列表与筛选器
+    ['Assigned to me', '分配给我'],
+    ['Assignees', '受理人'],
+    ['Author', '作者'],
+    ['Collapse sidebar', '折叠侧边栏'],
+    ['Created by me', '由我创建'],
+    ['Issue filters', '议题筛选器'],
+    ['Issues sidebar navigation', '议题侧边栏导航'],
+    ['Open Issues sidebar navigation', '打开议题侧边栏导航'],
+    ['Labels', '标签'],
+    ['Mentioned', '被提及'],
+    ['Milestones', '里程碑'],
+    ['More Actions', '更多操作'],
+    ['No results', '没有结果'],
+    ['Recent activity', '最近活动'],
+    ['Search Issues', '搜索议题'],
+    ['Search results', '搜索结果'],
+    ['Try adjusting your search filters.', '请尝试调整搜索筛选条件。'],
+    ['Views', '视图'],
+    ['Filter all issues', '筛选所有议题'],
+    ['Filter by assignees', '按受理人筛选'],
+    ['Filter by author', '按作者筛选'],
+    ['Filter by label', '按标签筛选'],
+    ['Filter by milestone', '按里程碑筛选'],
+    ['Filter by project', '按项目筛选'],
+    ['0 list items of 0 selected', '已选择 0 / 0 个列表项'],
+    ['0 of 0 selected', '已选择 0 / 0 项'],
+    ['全选 list items: Search results', '全选列表项：搜索结果'],
   ]);
 
   /**
@@ -1254,6 +1307,8 @@
     [/^\s*(\d[\d,]*)\s+members?\s*$/gi, '$1 名成员'],
     [/^\s*(\d[\d,]*)\s+entit(?:y|ies)\s*$/gi, '$1 个对象'],
     [/^\s*(\d[\d,]*)\s+results? loaded\s*$/gi, '已加载 $1 条结果'],
+    [/^\s*(\d[\d,]*)\s+list items? of\s*(\d[\d,]*)\s+selected\s*$/gi, '已选择 $2 / $1 个列表项'],
+    [/^\s*(\d[\d,]*)\s+of\s*(\d[\d,]*)\s+selected\s*$/gi, '已选择 $1 / $2 项'],
     [/^(\d{4})-(\d{2})-(\d{2}),\s*(\d+)\.\s*(Passes|Failures|Bypasses)\.?$/gi, (_, year, month, day, count, status) => {
       const names = { Passes: '通过', Failures: '失败', Bypasses: '绕过' };
       return `${year} 年 ${Number(month)} 月 ${Number(day)} 日，${count} 次${names[status]}`;
@@ -1520,6 +1575,49 @@
     return Boolean(element.closest(ignoredSelectors));
   }
 
+  /**
+   * 标签、项目、里程碑、仓库和用户等名称由用户或仓库数据决定。它们常出现在
+   * GitHub 动态创建的下拉菜单中，不能因为恰好与某个界面词汇同名而被翻译。
+   */
+  function isVariableGitHubContent(element, value = '') {
+    if (!(element instanceof Element)) return false;
+
+    if (element.closest('[role="listbox"], [class*="SuggestionsList"]')) {
+      return true;
+    }
+
+    const isDynamicPickerMenu = Boolean(
+      element.closest(
+        [
+          '[class*="LabelPicker"] [role="menu"]',
+          '[class*="ListProjectFilter"] [role="menu"]',
+          '[class*="ListMilestoneFilter"] [role="menu"]',
+          '[class*="ListAssigneeFilter"] [role="menu"]',
+          '[class*="ListAuthorFilter"] [role="menu"]',
+          '[class*="repoPicker"] [role="menu"]',
+          '[class*="RepositoryPicker"] [role="menu"]',
+        ].join(',')
+      )
+    );
+
+    if (isDynamicPickerMenu) {
+      const fixedPickerText = new Set([
+        'Filter by issue type', 'Filter types', 'No type',
+        'Issues with no type', 'Filter assignees', 'No assignees',
+        'Filter milestones', 'No milestone', 'Filter projects',
+        'No projects were found', 'Please try a different search query.',
+        'Filter labels', 'No labels',
+      ]);
+      return !fixedPickerText.has(value.trim());
+    }
+
+    const href = element.closest('a[href]')?.getAttribute('href') ?? '';
+
+    return /\/(?:issues|pull)\/\d+(?:[/?#]|$)/.test(href) ||
+      /\/(?:labels|milestone|projects)\//.test(href) ||
+      /^\/[^/?#]+\/[^/?#]+\/?(?:[?#]|$)/.test(href);
+  }
+
   function isEditableControl(element) {
     return (
       element instanceof Element &&
@@ -1772,6 +1870,18 @@
       return;
     }
 
+    if (isVariableGitHubContent(parent, original)) return;
+
+    // GitHub 的筛选器会把查询语法渲染为普通文本节点；不可翻译其中的
+    // `updated`、`@today` 等关键字，否则会导致查询条件失效。
+    if (
+      parent.closest(
+        '[data-type="filter-expression"], .styled-input-content, .Input-module__Box_3__M5GVB'
+      )
+    ) {
+      return;
+    }
+
     // 优先完整匹配
     let exactTranslation = translateExact(original);
 
@@ -1948,6 +2058,7 @@
       const original = element.getAttribute(attribute);
 
       if (!original) continue;
+      if (isVariableGitHubContent(element, original)) continue;
 
       const exactTranslation = translateExact(original);
 
