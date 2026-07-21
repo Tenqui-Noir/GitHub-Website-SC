@@ -441,13 +441,108 @@
     ['Suggested workflows', '推荐工作流'],
     ['Based on your tech stack', '根据你的技术栈推荐'],
     ['Configure', '配置'],
+    ['Create the first page', '创建第一个页面'],
+    ['Welcome to the Tenqui-s-MC-Director-s-Cut-Website wiki!', '欢迎来到 Tenqui-s-MC-Director-s-Cut-Website 的 Wiki！'],
+    ['Wikis provide a place in your repository to lay out the roadmap of your project, show the current status, and document software better, together.', 'Wiki 可以在仓库中展示项目路线图、当前状态，并集中记录软件文档。'],
+    ['Create new page', '创建新页面'],
+    ['Insert h1', '插入一级标题'],
+    ['Insert h2', '插入二级标题'],
+    ['Insert h3', '插入三级标题'],
+    ['Add link', '添加链接'],
+    ['Add image', '添加图片'],
+    ['Add bold text', '添加粗体文本'],
+    ['Add italic text', '添加斜体文本'],
+    ['Insert code', '插入代码'],
+    ['Add unordered list', '添加无序列表'],
+    ['Add ordered list', '添加有序列表'],
+    ['Insert blockquote', '插入引用块'],
+    ['Insert horizontal rule', '插入水平分隔线'],
+    ['Help', '帮助'],
+    ['Edit mode:', '编辑模式：'],
+    ['Block Elements', '块元素'],
+    ['Span Elements', '行内元素'],
+    ['Miscellaneous', '其他'],
+    ['Paragraphs & Breaks', '段落和换行'],
+    ['Paragraphs &amp; Breaks', '段落和换行'],
+    ['Headers', '标题'],
+    ['Blockquotes', '引用块'],
+    ['Links', '链接'],
+    ['Emphasis', '强调'],
+    ['Images', '图片'],
+    ['Automatic Links', '自动链接'],
+    ['Escaping', '转义'],
+    ['Markdown creates blockquotes email-style by prefixing each line with the >. This looks best if you decide to hard-wrap text and prefix each line with a > character, but Markdown supports just putting > before your paragraph.', 'Markdown 会像电子邮件一样，通过在每一行前添加 > 来创建引用块。如果你选择手动换行并在每行前添加 > 字符，显示效果最好；不过 Markdown 也支持只在段落前添加 >。'],
+    ['Code Blocks', '代码块'],
+    ['Markdown wraps code blocks in pre-formatted tags to preserve indentation in your code blocks. To create a code block, indent the entire block by at least 4 spaces or one tab. Markdown will strip the extra indentation you’ve added to the code block.', 'Markdown 会用预格式化标签包裹代码块，以保留代码块中的缩进。要创建代码块，请将整个代码块至少缩进 4 个空格或 1 个制表符。Markdown 会移除你添加到代码块中的额外缩进。'],
+    ['Horizontal Rules', '水平分隔线'],
+    ['Horizontal rules are created by placing three or more hyphens, asterisks or underscores on a line by themselves. Spaces are allowed between the hyphens, asterisks or underscores.', '在单独一行输入三个或更多连字符、星号或下划线即可创建水平分隔线。连字符、星号或下划线之间允许有空格。'],
+    ['Page content', '页面内容'],
+    ['Uploading your files…', '正在上传文件…'],
+    ['We don’t support that file type.', '不支持此文件类型。'],
+    ['Try again', '重试'],
+    ['Attaching documents requires write permission to this repository.', '附加文档需要对此仓库具有写入权限。'],
+    ['with a GIF, JPEG, JPG, MOV, MP4, PNG, SVG, WEBM or WEBP.', '请使用 GIF、JPEG、JPG、MOV、MP4、PNG、SVG、WEBM 或 WEBP 文件。'],
+    ['with a file that’s not empty.', '请使用非空文件。'],
+    ['with another file.', '请使用其他文件。'],
+    ['This file is empty.', '此文件为空。'],
+    ['This file is hidden.', '此文件已隐藏。'],
+    ['Something went really wrong, and we can’t process that file.', '出现严重错误，无法处理该文件。'],
+    ['Styling with Markdown is supported', '支持使用 Markdown 设置样式'],
+    ['Edit message', '编辑消息'],
+    ['Save page', '保存页面'],
+    ['To create a paragraph, simply create a block of text that is not separated by one or more blank lines. Blocks of text separated by one or more blank lines will be parsed as paragraphs.', '要创建段落，只需输入一段不被一个或多个空行分隔的文本。被一个或多个空行分隔的文本块将被解析为段落。'],
+    ['If you want to create a line break, end a line with two or more spaces, then hit Return/Enter.', '如果要换行，请在行末输入两个或更多空格，然后按 Return/Enter。'],
+    ['Someone has edited the wiki since you started. Please reload this page and re-apply your changes.', '你开始编辑后有人修改了 Wiki。请重新加载此页面并重新应用你的更改。'],
+    ['Try again.', '重试。'],
+    ['This file is empty.', '此文件为空。'],
+    ['This file is hidden.', '此文件已隐藏。'],
+    ['More items, including current item', '更多项目，包括当前项目'],
+    ['Close dialog', '关闭对话框'],
+    ['Edit file', '编辑文件'],
+    ['View all files', '查看所有文件'],
+    ['Drop to upload your files', '拖放以上传文件'],
+    ['Repository files navigation', '仓库文件导航'],
+    ['Package a Jekyll site using the jekyll/builder Docker image.', '使用 jekyll/builder Docker 镜像打包 Jekyll 网站。'],
     ['Publish Node.js Package to GitHub Packages', '将 Node.js 软件包发布到 GitHub Packages'],
     ['Publishes a Node.js package to GitHub Packages.', '将 Node.js 软件包发布到 GitHub Packages。'],
     ['SLSA Generic generator', 'SLSA 通用生成器'],
     ['Generate SLSA3 provenance for your existing release workflows', '为现有发布工作流生成 SLSA3 来源证明'],
+    ['Recommended workflows', '推荐工作流'],
+    ['Based on your tech stack', '根据你的技术栈推荐'],
     ['Build a NodeJS project with npm and webpack.', '使用 npm 和 webpack 构建 Node.js 项目。'],
+    ['Use npm to build and test Node.js project.', '使用 npm 构建并测试 Node.js 项目。'],
     ['More workflows', '更多工作流'],
     ['Dismiss suggestions', '忽略建议'],
+    ['Filter Issues', '筛选议题'],
+    ['Filters', '筛选器'],
+    ['View advanced search syntax', '查看高级搜索语法'],
+    ['Welcome to pull requests!', '欢迎使用拉取请求！'],
+    ['create a pull request', '创建拉取请求'],
+    ['Pull requests help you collaborate on code with other people. As pull requests are created, they’ll appear here in a searchable and filterable list. To get started, you should', '拉取请求可帮助你与他人协作处理代码。创建拉取请求后，它们会显示在这个可搜索、可筛选的列表中。要开始使用，你应该'],
+    ["Pull requests help you collaborate on code with other people. As pull requests are created, they'll appear here in a searchable and filterable list. To get started, you should", '拉取请求可帮助你与他人协作处理代码。创建拉取请求后，它们会显示在这个可搜索、可筛选的列表中。要开始使用，你应该'],
+    ['Label issues and pull requests for new contributors', '为新贡献者标记议题和拉取请求'],
+    ['Now, GitHub will help potential first-time contributors', '现在，GitHub 会帮助潜在的首次贡献者'],
+    ['discover issues', '发现议题'],
+    ['labeled with', '这些议题带有标签'],
+    ['Compare and review just about anything', '比较并审查几乎任何内容'],
+    ['Branches, tags, commit ranges, and time ranges. In the same repository and across forks.', '可以比较同一仓库或跨复刻仓库中的分支、标签、提交范围和时间范围。'],
+    ['base repository:', '基础仓库：'],
+    ['head repository:', '头部仓库：'],
+    ['base:', '基础：'],
+    ['compare:', '比较：'],
+    ['Choose a base ref', '选择基础引用'],
+    ['Choose a head ref', '选择头部引用'],
+    ['Find a branch', '查找分支'],
+    ['Find a tag', '查找标签'],
+    ['Could not load branches', '无法加载分支'],
+    ['Could not load tags', '无法加载标签'],
+    ['Compare changes', '比较更改'],
+    ['Learn about pull requests', '了解拉取请求'],
+    ['Compare changes across branches, commits, tags, and more below.', '在下方比较分支、提交、标签等内容的更改。'],
+    ['If you need to, you can also', '如果需要，你也可以'],
+    ['compare across forks', '跨复刻仓库比较'],
+    ['Choose different branches or forks above to discuss and review changes.', '请在上方选择不同的分支或复刻仓库，以讨论和审查更改。'],
+    ['Example comparisons', '示例比较'],
     ['Participating and @mentions', '参与和 @提及'],
     ['Only receive notifications from this repository when participating or @mentioned.', '仅在参与或被 @提及时接收此仓库的通知。'],
     ['All Activity', '所有活动'],
@@ -595,6 +690,7 @@
     ['Audit log', '审核日志'],
     ['Report repository', '举报仓库'],
     ['Pin to...', '置顶到...'],
+    ['Pin to…', '置顶到…'],
     ['Public pins in this organization', '此组织中的公开置顶项'],
     ['Visible to anyone', '所有人可见'],
     ['Private pins in this organization', '此组织中的私有置顶项'],
@@ -711,6 +807,24 @@
     ['Types', '类型'],
     ['Feedback', '反馈'],
     ['Give feedback', '提供反馈'],
+    ['Organization navigation', '组织导航'],
+    ['Copilot budget setup', 'Copilot 预算设置'],
+    ['Dismiss banner', '关闭横幅'],
+    ["Change your organization’s avatar", '更改组织头像'],
+    ['Read documentation', '阅读文档'],
+    ['Retry.', '重试。'],
+    ['There was an error while loading.', '加载时出错。'],
+    ['Please reload this page', '请重新加载此页面'],
+    ['Save pins', '保存置顶项'],
+    ['Import', '导入'],
+    ['Invite', '邀请'],
+    ['Invite a billing manager', '邀请账单管理员'],
+    ['Authenticate members with', '验证成员身份，使用'],
+    ['Start free for 30 days', '免费试用 30 天'],
+    ['Dismiss', '关闭'],
+    ['Top languages', '热门语言'],
+    ['GitHub Copilot billing for', 'GitHub Copilot 计费方式已改为按使用量计费，适用于'],
+    ['is now usage-based. Set a per-user budget to manage costs.', '现已按使用量计费。请设置每位用户的预算以管理费用。'],
     ['Sort by', '排序方式'],
     ['Created on', '创建时间'],
     ['Total comments', '评论总数'],
@@ -721,6 +835,7 @@
     ['Newest', '最新'],
     ['Filter by issue type', '按议题类型筛选'],
     ['Filter types', '筛选类型'],
+    ['Filter authors', '筛选作者'],
     ['No type', '无类型'],
     ['Issues with no type', '没有类型的议题'],
     ['Filter assignees', '筛选受理人'],
@@ -728,10 +843,80 @@
     ['Filter milestones', '筛选里程碑'],
     ['No milestone', '无里程碑'],
     ['Filter projects', '筛选项目'],
+    ['Search projects', '搜索项目'],
+    ['Repository projects', '仓库项目'],
+    ['No projects found', '未找到项目'],
     ['No projects were found', '未找到项目'],
+    ['There are no projects linked to this repository yet.', '此仓库尚未关联任何项目。'],
     ['Please try a different search query.', '请尝试其他搜索条件。'],
     ['Filter labels', '筛选标签'],
     ['No labels', '无标签'],
+    ['New label', '新建标签'],
+    ['Search all labels', '搜索所有标签'],
+    ['More list item action bar', '更多列表项操作栏'],
+    ['bug', '缺陷'],
+    ['Something isn\'t working', '有东西不能正常工作'],
+    ['Improvements or additions to documentation', '文档改进或补充'],
+    ['duplicate', '重复'],
+    ['This issue or pull request already exists', '此议题或拉取请求已存在'],
+    ['enhancement', '增强'],
+    ['New feature or request', '新功能或请求'],
+    ['good first issue', '适合首次参与'],
+    ['Good for newcomers', '适合新手'],
+    ['help wanted', '需要帮助'],
+    ['Extra attention is needed', '需要额外关注'],
+    ['invalid', '无效'],
+    ['This doesn\'t seem right', '这似乎不正确'],
+    ['question', '问题'],
+    ['Further information is requested', '需要进一步信息'],
+    ['wontfix', '不予修复'],
+    ['This will not be worked on', '不会处理此项'],
+    ['Saved views', '已保存的视图'],
+    ['Recently Updated', '最近更新'],
+    ['No views yet', '暂无视图'],
+    ['Save a search as a view. Views are visible to everyone with repository access.', '将搜索保存为视图。拥有仓库访问权限的所有人都可以看到视图。'],
+    ['New view', '新建视图'],
+    ['New milestone', '新建里程碑'],
+    ['List view', '列表视图'],
+    ['You haven’t created any Milestones.', '你还没有创建任何里程碑。'],
+    ["You haven't created any Milestones.", '你还没有创建任何里程碑。'],
+    ['Use Milestones to create collections of Issues and Pull Requests for a particular release or project.', '使用里程碑为特定发行版或项目创建议题和拉取请求集合。'],
+    ['Create a milestone', '创建里程碑'],
+    ['Alphabetical', '按字母顺序'],
+    ['Reverse alphabetical', '按字母倒序'],
+    ['Closest due date', '最近到期日'],
+    ['Furthest due date', '最远到期日'],
+    ['Least complete', '完成度最低'],
+    ['Most complete', '完成度最高'],
+    ['Fewest issues', '议题最少'],
+    ['Most issues', '议题最多'],
+    ['Least Recently Updated', '最久未更新'],
+    ['Total issue count', '议题总数'],
+    ['Ascending', '升序'],
+    ['Descending', '降序'],
+    ['No project templates', '暂无项目模板'],
+    ['Provide quick access to relevant project templates', '提供相关项目模板的快速访问入口'],
+    ['Add project templates from your organization to view them here.', '从你的组织添加项目模板后即可在此查看。'],
+    ['Link a project', '关联项目'],
+    ['Link a template', '关联模板'],
+    ['More project actions', '更多项目操作'],
+    ['Search by name…', '按名称搜索…'],
+    ['Search by name...', '按名称搜索...'],
+    ['Folders and files', '文件夹和文件'],
+    ['Latest commit', '最新提交'],
+    ['Last commit message', '最后提交消息'],
+    ['Last commit date', '最后提交日期'],
+    ['Open commit details', '打开提交详情'],
+    ['Open more actions menu', '打开更多操作菜单'],
+    ['Star this repository', '为此仓库加星标'],
+    ['Unstar this repository', '取消此仓库星标'],
+    ['Unstar this repository?', '要取消此仓库的星标吗？'],
+    ['Watchers', '关注者'],
+    ['Create a list to organize your starred repositories.', '创建列表来整理你的星标仓库。'],
+    ['Create list', '创建列表'],
+    ["You don't have any lists yet.", '你还没有任何列表。'],
+    ['Build and test a Node.js project with npm.', '使用 npm 构建并测试 Node.js 项目。'],
+    ['Tip:', '提示：'],
 
     // 设置页补充及无障碍文本
     ['Skip to content', '跳到正文'],
@@ -1118,13 +1303,59 @@
     dec: 12,
   };
 
+  [
+    ['Sessions', '会话'],
+    ['Filter sessions', '筛选会话'],
+    ['Search or filter', '搜索或筛选'],
+    ['No sessions match your filters', '没有会话符合你的筛选条件'],
+    ['Try adjusting your search or filters.', '请尝试调整搜索或筛选条件。'],
+    ['Reset filters', '重置筛选器'],
+    ['Needs attention', '需要关注'],
+    ['Toggle sidebar', '切换侧边栏'],
+    ['Previous tip', '上一条提示'],
+    ['Next tip', '下一条提示'],
+    ['Customize Copilot with AGENTS.md', '使用 AGENTS.md 自定义 Copilot'],
+    ['Generate with Copilot', '使用 Copilot 生成'],
+    ['uses AI. Check for mistakes.', '使用 AI。请检查是否有错误。'],
+    ['Agent navigation', '智能体导航'],
+    ['Agent management', '智能体管理'],
+    ['Task filters', '任务筛选器'],
+    ['Cycle through tips', '切换提示'],
+    ['Dismiss banner', '关闭横幅'],
+    ['Get Copilot in Teams', '在 Teams 中使用 Copilot'],
+    ['Kick off coding agent tasks from Microsoft Teams.', '从 Microsoft Teams 启动 coding agent 任务。'],
+    ['Copilot CLI', 'Copilot CLI'],
+    ['Start coding agent sessions right from your terminal.', '直接从终端启动 coding agent 会话。'],
+    ['Automations', '自动化'],
+    ['Start agent sessions automatically on a schedule or in response to events like new issues or updated pull requests.', '按计划自动启动 agent 会话，或在新议题、拉取请求更新等事件发生时自动启动。'],
+    ['Agent apps', 'Agent apps'],
+    ['Improve your workflow with agents from LaunchDarkly, Miro, PagerDuty and others, integrated into GitHub.', '通过集成到 GitHub 的 LaunchDarkly、Miro、PagerDuty 等 agent 改进你的工作流。'],
+    ['Start sessions in a desktop experience with visual diff review and multi-session support.', '在桌面体验中启动会话，支持可视化差异审查和多会话。'],
+    ['Get Copilot in Slack', '在 Slack 中使用 Copilot'],
+    ['Start coding agent tasks directly from Slack conversations.', '直接从 Slack 对话中启动 coding agent 任务。'],
+    ['Set up Teams', '设置 Teams'],
+    ['Set up Slack', '设置 Slack'],
+    ['Download', '下载'],
+    ['Get started', '开始使用'],
+  ].forEach(([source, target]) => translations.set(source, target));
+
   const partialTranslations = [
+    [/\b(\d[\d,]*)\s+sessions?\b/gi, '$1 个会话'],
+    [/Add an AGENTS\.md file to give Copilot context about your repo\s*(?:—|–|-)\s*coding standards,\s*architecture,\s*and preferred patterns\./gi, '添加 AGENTS.md 文件，为 Copilot 提供仓库上下文——编码规范、架构和偏好模式。'],
+    [/Copilot\s+uses AI\.\s*Check for mistakes\./gi, 'Copilot 使用 AI。请检查是否有错误。'],
+    [/\bWelcome to the ([A-Za-z0-9_.-]+(?:\/[A-Za-z0-9_.-]+)?) wiki!\b/g, '欢迎来到 $1 的 Wiki！'],
+    [/\bMarkdown wraps code blocks in pre-formatted tags to preserve indentation in your code blocks\.\s+To create a code block,\s+indent the entire block by at least 4 spaces or one tab\.\s+Markdown will strip the extra indentation you(?:'|’)ve added to the code block\./gi, 'Markdown 会用预格式化标签包裹代码块，以保留代码块中的缩进。要创建代码块，请将整个代码块至少缩进 4 个空格或 1 个制表符。Markdown 会移除你添加到代码块中的额外缩进。'],
     [/(\d[\d,]*)\s*\/\s*(\d[\d,]*)\s+characters\b/gi, '$1 / $2 个字符'],
     [/\bContribute back to ([A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+) by adding your own branch\./g, '通过添加自己的分支向 $1 贡献代码。'],
     [/\bFork your own copy of ([A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+)\b/g, '派生你自己的 $1 副本'],
     [/\b(\d[\d,]*)\s+stars?\b/gi, '$1 个星标'],
     [/\b(\d[\d,]*)\s+watching\b/gi, '$1 人关注'],
     [/\b(\d[\d,]*)\s+forks?\b/gi, '$1 个复刻'],
+    [/\b(\d[\d,]*)\s+items?\b/gi, '$1 项'],
+    [/\b(\d[\d,]*)\s+labels?\b/gi, '$1 个标签'],
+    [/^Pull requests:\s+(.+)$/gi, '拉取请求：$1'],
+    [/Compare changes across branches,\s*commits,\s*tags,\s*and more below\.\s*If you need to,\s*you can also\s*compare across forks\.?/gi, '在下方比较分支、提交、标签等内容的更改。如果需要，你也可以跨复刻仓库比较。'],
+    [/Compare changes across branches,\s*commits,\s*tags,\s*and more below\.\s*If you need to,\s*you can also\s*$/gi, '在下方比较分支、提交、标签等内容的更改。如果需要，你也可以'],
     [/\bContribution activity in ([A-Za-z0-9_.\/-]+)/g, '在 $1 中的贡献活动'],
     [/\bActivity\s+in\s+([A-Za-z0-9_.\/-]+)/g, '在 $1 中的活动'],
     [/\bActivity\s+in\s*$/g, '活动：'],
@@ -1323,7 +1554,6 @@
     [/^The chart has 1 Y axis displaying Values\. Data ranges from (.+?)\.$/gi, '图表包含 1 个 Y 轴，显示数值。数据范围：$1。'],
 
     // 组织主页、仓库、Teams 和 People 页面
-    ['GitHub Copilot billing for', 'GitHub Copilot 计费方式已改为按使用量计费，适用于'],
     [/\bGitHub Copilot billing for (.+?) is now usage-based\.\s+Set a per-user budget to manage costs\./gi, 'GitHub Copilot 计费方式已改为按使用量计费，适用于 $1。请设置每位用户的预算以管理费用。'],
     ['Set your budget', '设置预算'],
     ['We think you’re gonna like it here.', '我们相信你会喜欢这里。'],
@@ -1371,6 +1601,7 @@
     ['Export', '导出'],
     ['Invite member', '邀请成员'],
     ['Organization permissions', '组织权限'],
+    ['Member', '成员'],
     ['Members', '成员'],
     ['Outside collaborators', '外部协作者'],
     ['Pending collaborators', '待处理的协作者'],
@@ -1441,6 +1672,9 @@
 
     // Markdown 和用户生成内容
     '.markdown-body',
+    '.entry-content',
+    '.DirectoryRichtextContent-module__SharedMarkdownContent__hHXUL',
+    '[class*="SharedMarkdownContent"]',
     '.comment-body',
     '.js-comment-body',
     '.issue-body',
@@ -1583,7 +1817,21 @@
     if (!(element instanceof Element)) return false;
 
     if (element.closest('[role="listbox"], [class*="SuggestionsList"]')) {
-      return true;
+      // 账户菜单也是 listbox；仅放行其中确定由 GitHub 提供的固定操作。
+      // 个人状态、用户名、仓库建议和其他未知条目仍保持原文。
+      const fixedListboxText = new Set([
+        'Profile', 'Repositories', 'Stars', 'Gists', 'Organizations',
+        'Enterprises', 'Sponsors', 'Settings', 'Copilot settings',
+        'Feature preview', 'Appearance', 'Accessibility',
+        'Try Enterprise', 'Free', 'Sign out',
+        'Filter by issue type', 'Filter types', 'No type',
+        'Filter authors',
+        'Issues with no type', 'Filter assignees', 'No assignees',
+        'Filter milestones', 'No milestone', 'Filter projects', 'Search projects',
+        'No projects found', 'No projects were found', 'Please try a different search query.',
+        'Filter labels', 'No labels', 'Search all labels',
+      ]);
+      return !fixedListboxText.has(value.trim());
     }
 
     const isDynamicPickerMenu = Boolean(
@@ -1603,19 +1851,58 @@
     if (isDynamicPickerMenu) {
       const fixedPickerText = new Set([
         'Filter by issue type', 'Filter types', 'No type',
+        'Filter authors',
         'Issues with no type', 'Filter assignees', 'No assignees',
-        'Filter milestones', 'No milestone', 'Filter projects',
-        'No projects were found', 'Please try a different search query.',
-        'Filter labels', 'No labels',
+        'Filter milestones', 'No milestone', 'Filter projects', 'Search projects',
+        'No projects found', 'No projects were found', 'Please try a different search query.',
+        'Filter labels', 'No labels', 'Search all labels',
       ]);
       return !fixedPickerText.has(value.trim());
     }
 
+    // 仓库顶部导航是固定界面文字，即使链接指向仓库根路径也应翻译。
+    if (element.closest('[data-tab-item], .LocalNavigation')) return false;
+
+    const fixedGitHubUiText = new Set([
+      'New label', 'New milestone', 'Create a milestone', 'New view',
+      'Repository projects', 'Saved views', 'No views yet', 'List view',
+      'Recently Updated', 'More list item action bar',
+      'Report repository', 'Pin to...', 'Pin to…',
+      'Public pins in this organization', 'Private pins in this organization',
+      'There are no projects linked to this repository yet.',
+      'Link a project',
+      'Save a search as a view. Views are visible to everyone with repository access.',
+      'You haven’t created any Milestones.', "You haven't created any Milestones.",
+      'Use Milestones to create collections of Issues and Pull Requests for a particular release or project.',
+      'Folders and files', 'Latest commit', 'Last commit message', 'Last commit date',
+      'Open commit details', 'Open more actions menu',
+      'Star this repository', 'Unstar this repository', 'Unstar this repository?',
+      'Create list', 'Create a list to organize your starred repositories.',
+      "You don't have any lists yet.", 'Build and test a Node.js project with npm.',
+      'Recommended workflows', 'Based on your tech stack',
+      'Generate SLSA3 provenance for your existing release workflows',
+      'Use npm to build and test Node.js project.',
+      'More workflows', 'Dismiss suggestions',
+      'Compare and review just about anything', 'Compare changes',
+      'Choose a base ref', 'Choose a head ref',
+      'Learn about pull requests',
+      'Compare changes across branches, commits, tags, and more below.',
+      'compare across forks', 'Example comparisons',
+      'Sessions', 'Filter sessions', 'Search or filter',
+      'No sessions match your filters', 'Reset filters', 'Needs attention',
+      'Toggle sidebar', 'Previous tip', 'Next tip',
+      'Customize Copilot with AGENTS.md', 'Generate with Copilot',
+      'Agent navigation', 'Agent management', 'Task filters',
+    ]);
+    if (fixedGitHubUiText.has(value.trim())) return false;
+
     const href = element.closest('a[href]')?.getAttribute('href') ?? '';
+
+    const isFixedAccountPath = /^\/(?:settings|account|notifications|marketplace|sponsors|organizations|enterprises)(?:[/?#]|$)/.test(href);
 
     return /\/(?:issues|pull)\/\d+(?:[/?#]|$)/.test(href) ||
       /\/(?:labels|milestone|projects)\//.test(href) ||
-      /^\/[^/?#]+\/[^/?#]+\/?(?:[?#]|$)/.test(href);
+      (!isFixedAccountPath && /^\/[^/?#]+\/[^/?#]+\/?(?:[?#]|$)/.test(href));
   }
 
   function isEditableControl(element) {
@@ -2023,6 +2310,153 @@
     }
   }
 
+  function translateGollumEditorHelp(root) {
+    const scope =
+      root instanceof Element ||
+      root instanceof Document ||
+      root instanceof DocumentFragment
+        ? root
+        : document;
+
+    const helpNodes = [];
+
+    if (root instanceof Text) {
+      const helpNode = root.parentElement?.closest(
+        '#gollum-editor-help-content'
+      );
+
+      if (helpNode) helpNodes.push(helpNode);
+    }
+
+    if (root instanceof Element) {
+      const helpNode = root.closest('#gollum-editor-help-content');
+
+      if (helpNode) helpNodes.push(helpNode);
+
+      const wrapper = root.closest('#gollum-editor-help-wrapper');
+
+      if (wrapper) {
+        helpNodes.push(
+          ...wrapper.querySelectorAll('#gollum-editor-help-content')
+        );
+      }
+    }
+
+    if (
+      root instanceof Element &&
+      root.id === 'gollum-editor-help-content'
+    ) {
+      helpNodes.push(root);
+    }
+
+    if (typeof scope.querySelectorAll === 'function') {
+      helpNodes.push(...scope.querySelectorAll('#gollum-editor-help-content'));
+    }
+
+    const helpTranslations = new Map([
+      [
+        'Markdown supports two header formats. The wiki editor uses the “atx”-style headers. Simply prefix your header text with the number of # characters to specify heading depth. For example: # Header 1, ## Header 2 and ### Header 3 will be progressively smaller headers. You may end your headers with any number of hashes.',
+        'Markdown 支持两种标题格式。Wiki 编辑器使用“atx”风格标题。只需在标题文本前添加相应数量的 # 字符，即可指定标题层级。例如：# 标题 1、## 标题 2 和 ### 标题 3 会显示为逐级变小的标题。标题末尾也可以添加任意数量的 #。'
+      ],
+      [
+        'Markdown creates blockquotes email-style by prefixing each line with the >. This looks best if you decide to hard-wrap text and prefix each line with a > character, but Markdown supports just putting > before your paragraph.',
+        'Markdown 会像电子邮件一样，通过在每一行前添加 > 来创建引用块。如果你选择手动换行并在每行前添加 > 字符，显示效果最好；不过 Markdown 也支持只在段落前添加 >。'
+      ],
+      [
+        'Markdown supports both ordered and unordered lists. To create an ordered list, simply prefix each line with a number (any number will do — this is why the editor only uses one number.) To create an unordered list, you can prefix each line with *, + or -. List items can contain multiple paragraphs, however each paragraph must be indented by at least 4 spaces or a tab.',
+        'Markdown 支持有序列表和无序列表。要创建有序列表，只需在每行前添加数字（任何数字都可以，这也是编辑器只使用一个数字的原因）。要创建无序列表，可以在每行前添加 *、+ 或 -。列表项可以包含多个段落，但每个段落必须至少缩进 4 个空格或 1 个制表符。'
+      ],
+      [
+        'Markdown wraps code blocks in pre-formatted tags to preserve indentation in your code blocks. To create a code block, indent the entire block by at least 4 spaces or one tab. Markdown will strip the extra indentation you’ve added to the code block.',
+        'Markdown 会用预格式化标签包裹代码块，以保留代码块中的缩进。要创建代码块，请将整个代码块至少缩进 4 个空格或 1 个制表符。Markdown 会移除你添加到代码块中的额外缩进。'
+      ],
+      [
+        'Horizontal rules are created by placing three or more hyphens, asterisks or underscores on a line by themselves. Spaces are allowed between the hyphens, asterisks or underscores.',
+        '在单独一行输入三个或更多连字符、星号或下划线即可创建水平分隔线。连字符、星号或下划线之间允许有空格。'
+      ],
+      [
+        'Markdown has two types of links: inline and reference. For both types of links, the text you want to display to the user is placed in square brackets. For example, if you want your link to display the text “GitHub”, you write [GitHub]. To create an inline link, create a set of parentheses immediately after the brackets and write your URL within the parentheses. (e.g., [GitHub](https://github.com/)). Relative paths are allowed in inline links. To create a reference link, use two sets of square brackets. [[my internal link|internal-ref]] will link to the internal reference internal-ref.',
+        'Markdown 有两种链接：行内链接和引用链接。两种链接都需要把要显示给用户的文本放在方括号中。例如，如果你希望链接显示为“GitHub”，就写作 [GitHub]。要创建行内链接，请紧跟方括号后写一组圆括号，并在圆括号中填写 URL，例如 [GitHub](https://github.com/)。行内链接允许使用相对路径。要创建引用链接，请使用两组方括号。[[my internal link|internal-ref]] 会链接到内部引用 internal-ref。'
+      ],
+      [
+        'Asterisks (*) and underscores (\\_) are treated as emphasis and are wrapped with an <em> tag, which usually displays as italics in most browsers. Double asterisks (****) or double underscores (\\_\\_) are treated as bold using the <strong> tag. To create italic or bold text, simply wrap your words in single/double asterisks/underscores. For example, ****My double emphasis text\\*\\* becomes My double emphasis text, and *My single emphasis text* becomes My single emphasis text.',
+        '星号 (*) 和下划线 (\\_) 会被视为强调，并用 <em> 标签包裹，通常在大多数浏览器中显示为斜体。双星号 (****) 或双下划线 (\\_\\_) 会用 <strong> 标签显示为粗体。要创建斜体或粗体文本，只需用单个或双个星号/下划线包裹文字。例如，****My double emphasis text\\*\\* 会变成粗体文本，*My single emphasis text* 会变成斜体文本。'
+      ],
+      [
+        'To create inline spans of code, simply wrap the code in backticks (`). Markdown will turn `myFunction` into myFunction.',
+        '要创建行内代码片段，只需用反引号 (`) 包裹代码。Markdown 会把 `myFunction` 转换为行内代码 myFunction。'
+      ],
+      [
+        'Markdown image syntax looks a lot like the syntax for links; it is essentially the same syntax preceded by an exclamation point (!). For example, if you want to link to an image at https://github.com/unicorn.png with the alternate text My Unicorn, you would write ![My Unicorn](https://github.com/unicorn.png).',
+        'Markdown 图片语法看起来很像链接语法，本质上是在同样的语法前加一个感叹号 (!)。例如，如果你想链接到 https://github.com/unicorn.png 这张图片，并使用替代文本 My Unicorn，可以写作 ![My Unicorn](https://github.com/unicorn.png)。'
+      ],
+      [
+        'If you want to create a link that displays the actual URL, markdown allows you to quickly wrap the URL in < and > to do so. For example, the link https://github.com/ is easily produced by writing <https://github.com/>.',
+        '如果你想创建一个直接显示实际 URL 的链接，Markdown 允许你用 < 和 > 快速包裹 URL。例如，写作 <https://github.com/> 就能轻松生成链接 https://github.com/。'
+      ],
+      [
+        'If you want to use a special Markdown character in your document (such as displaying literal asterisks), you can escape the character with the backslash (\\). Markdown will ignore the character directly after a backslash.',
+        '如果你想在文档中使用特殊 Markdown 字符（例如显示字面量星号），可以用反斜杠 (\\) 转义该字符。Markdown 会忽略反斜杠后紧跟字符的特殊含义。'
+      ],
+    ].map(([source, target]) => [normalizeHelpText(source), target]));
+
+    for (const helpNode of helpNodes) {
+      const text = normalizeHelpText(helpNode.textContent);
+      let translated = helpTranslations.get(text);
+
+      if (!translated) {
+        if (text.startsWith('Markdown supports two header formats.')) {
+          translated =
+            'Markdown 支持两种标题格式。Wiki 编辑器使用“atx”风格标题。只需在标题文本前添加相应数量的 # 字符，即可指定标题层级。例如：# 标题 1、## 标题 2 和 ### 标题 3 会显示为逐级变小的标题。标题末尾也可以添加任意数量的 #。';
+        } else if (text.startsWith('Markdown creates blockquotes email-style')) {
+          translated =
+            'Markdown 会像电子邮件一样，通过在每一行前添加 > 来创建引用块。如果你选择手动换行并在每行前添加 > 字符，显示效果最好；不过 Markdown 也支持只在段落前添加 >。';
+        } else if (text.startsWith('Markdown supports both ordered and unordered lists.')) {
+          translated =
+            'Markdown 支持有序列表和无序列表。要创建有序列表，只需在每行前添加数字（任何数字都可以，这也是编辑器只使用一个数字的原因）。要创建无序列表，可以在每行前添加 *、+ 或 -。列表项可以包含多个段落，但每个段落必须至少缩进 4 个空格或 1 个制表符。';
+        } else if (text.startsWith('Markdown has two types of links:')) {
+          translated =
+            'Markdown 有两种链接：行内链接和引用链接。两种链接都需要把要显示给用户的文本放在方括号中。例如，如果你希望链接显示为“GitHub”，就写作 [GitHub]。要创建行内链接，请紧跟方括号后写一组圆括号，并在圆括号中填写 URL，例如 [GitHub](https://github.com/)。行内链接允许使用相对路径。要创建引用链接，请使用两组方括号。[[my internal link|internal-ref]] 会链接到内部引用 internal-ref。';
+        } else if (text.startsWith('Asterisks (')) {
+          translated =
+            '星号 (*) 和下划线 (_) 会被视为强调，并用 <em> 标签包裹，通常在大多数浏览器中显示为斜体。双星号 (****) 或双下划线 (__) 会用 <strong> 标签显示为粗体。要创建斜体或粗体文本，只需用单个或双个星号/下划线包裹文字。例如，**My double emphasis text** 会变成粗体文本，*My single emphasis text* 会变成斜体文本。';
+        } else if (text.startsWith('To create inline spans of code,')) {
+          translated =
+            '要创建行内代码片段，只需用反引号 (`) 包裹代码。Markdown 会把 `myFunction` 转换为行内代码 myFunction。';
+        } else if (text.startsWith('Markdown image syntax looks a lot like')) {
+          translated =
+            'Markdown 图片语法看起来很像链接语法，本质上是在同样的语法前加一个感叹号 (!)。例如，如果你想链接到 https://github.com/unicorn.png 这张图片，并使用替代文本 My Unicorn，可以写作 ![My Unicorn](https://github.com/unicorn.png)。';
+        } else if (text.startsWith('If you want to create a link that displays the actual URL,')) {
+          translated =
+            '如果你想创建一个直接显示实际 URL 的链接，Markdown 允许你用 < 和 > 快速包裹 URL。例如，写作 <https://github.com/> 就能轻松生成链接 https://github.com/。';
+        } else if (text.startsWith('If you want to use a special Markdown character')) {
+          translated =
+            '如果你想在文档中使用特殊 Markdown 字符（例如显示字面量星号），可以用反斜杠 (\\) 转义该字符。Markdown 会忽略反斜杠后紧跟字符的特殊含义。';
+        } else if (text.startsWith('Markdown wraps code blocks in pre-formatted tags')) {
+          translated =
+            'Markdown 会用预格式化标签包裹代码块，以保留代码块中的缩进。要创建代码块，请将整个代码块至少缩进 4 个空格或 1 个制表符。Markdown 会移除你添加到代码块中的额外缩进。';
+        } else if (text.startsWith('Horizontal rules are created by placing')) {
+          translated =
+            '在单独一行输入三个或更多连字符、星号或下划线即可创建水平分隔线。连字符、星号或下划线之间允许有空格。';
+        }
+      }
+
+      if (translated) {
+        helpNode.textContent = translated;
+      }
+    }
+  }
+
+  function normalizeHelpText(value) {
+    return (value || '')
+      .replace(/\s+/g, ' ')
+      .replace(/[“”]/g, '"')
+      .replace(/[‘’]/g, "'")
+      .replace(/\s+([,.)])/g, '$1')
+      .replace(/([(])\s+/g, '$1')
+      .trim();
+  }
+
   /**
    * 只扫描可编辑区域中的固定占位提示，不修改用户输入。
    */
@@ -2209,6 +2643,8 @@
    */
   function translateTree(root) {
     if (!root) return;
+
+    translateGollumEditorHelp(root);
 
     if (root instanceof Text) {
       translateTextNode(root);
